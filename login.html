@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H4K HEX - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Background -->
+    <div class="login-background">
+        <div class="gradient-bg">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="particles" id="particles"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <!-- Login Card -->
+        <div class="login-card glass-card">
+            <div class="card-glow"></div>
+            
+            <!-- Logo -->
+            <div class="login-logo">
+                <div class="logo-icon">
+                    <span class="logo-text">H4K</span>
+                    <div class="logo-glow"></div>
+                </div>
+                <h1 class="logo-main">HEX</h1>
+            </div>
+
+            <!-- Login Header -->
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to access your account</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="admin@h4khex.com"
+                            required
+                        >
+                        <span class="input-icon">📧</span>
+                        <div class="input-glow"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                        >
+                        <span class="input-icon">🔒</span>
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            👁️
+                        </button>
+                        <div class="input-glow"></div>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember" id="remember">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="login-btn ripple" data-ripple>
+                    <span>Sign In</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <button class="social-btn google-btn" data-ripple>
+                    <span class="social-icon">🔍</span>
+                    <span>Continue with Google</span>
+                </button>
+                <button class="social-btn github-btn" data-ripple>
+                    <span class="social-icon">🐙</span>
+                    <span>Continue with GitHub</span>
+                </button>
+            </div>
+
+            <!-- Sign Up Link -->
+            <div class="signup-link">
+                <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            </div>
+
+            <!-- Demo Credentials -->
+            <div class="demo-credentials glass-card">
+                <h4>Demo Credentials</h4>
+                <div class="demo-item">
+                    <span class="demo-label">Admin:</span>
+                    <span class="demo-value">admin@h4khex.com / admin123</span>
+                </div>
+                <div class="demo-item">
+                    <span class="demo-label">User:</span>
+                    <span class="demo-value">user@h4khex.com / user123</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Indicators -->
+        <div class="security-indicators">
+            <div class="security-item">
+                <span class="security-icon">🔒</span>
+                <span>SSL Secured</span>
+            </div>
+            <div class="security-item">
+                <span class="security-icon">🛡️</span>
+                <span>Encrypted</span>
+            </div>
+            <div class="security-item">
+                <span class="security-icon">⚡</span>
+                <span>Fast Login</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Authenticating...</p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

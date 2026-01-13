@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H4K HEX Dashboard - Admin Panel</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Dashboard Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-text">H4K HEX</span>
+                <div class="logo-glow"></div>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item active">
+                    <a href="#overview" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#analytics" class="nav-link">
+                        <span class="nav-icon">📈</span>
+                        <span class="nav-text">Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">
+                        <span class="nav-icon">🛍️</span>
+                        <span class="nav-text">Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#users" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Users</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sales" class="nav-link">
+                        <span class="nav-icon">💰</span>
+                        <span class="nav-text">Sales</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300bfff'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='40' font-family='Arial'%3EAD%3C/text%3E%3C/svg%3E" alt="Admin">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Admin User</span>
+                    <span class="user-role"> Div: h!ruontop</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1 class="dashboard-title">Dashboard Overview</h1>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search..." id="searchInput">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <button class="notification-btn">
+                        <span class="notification-icon">🔔</span>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="stats-grid">
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <h3>Total Revenue</h3>
+                            <p class="stat-value">$45,678</p>
+                            <span class="stat-change positive">+12.5%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">🛍️</div>
+                        <div class="stat-content">
+                            <h3>Total Sales</h3>
+                            <p class="stat-value">1,234</p>
+                            <span class="stat-change positive">+8.2%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <h3>Active Users</h3>
+                            <p class="stat-value">5,678</p>
+                            <span class="stat-change positive">+15.3%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">📱</div>
+                        <div class="stat-content">
+                            <h3>Products</h3>
+                            <p class="stat-value">24</p>
+                            <span class="stat-change neutral">+2 new</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="chart-container glass-card">
+                        <h3>Sales Analytics</h3>
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                    
+                    <div class="activity-feed glass-card">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">🛒</div>
+                                <div class="activity-content">
+                                    <p>New sale: Code Optimizer Pro</p>
+                                    <span class="activity-time">2 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">👤</div>
+                                <div class="activity-content">
+                                    <p>New user registration</p>
+                                    <span class="activity-time">15 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">⭐</div>
+                                <div class="activity-content">
+                                    <p>New review: 5 stars</p>
+                                    <span class="activity-time">1 hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="dashboard-section">
+                <div class="analytics-grid">
+                    <div class="analytics-card glass-card">
+                        <h3>Traffic Sources</h3>
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                    
+                    <div class="analytics-card glass-card">
+                        <h3>User Engagement</h3>
+                        <canvas id="engagementChart"></canvas>
+                    </div>
+                    
+                    <div class="analytics-card glass-card">
+                        <h3>Revenue by Product</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    
+                    <div class="analytics-card glass-card">
+                        <h3>Conversion Rates</h3>
+                        <div class="conversion-stats">
+                            <div class="conversion-item">
+                                <span class="conversion-label">Overall</span>
+                                <span class="conversion-value">3.2%</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span class="conversion-label">Products</span>
+                                <span class="conversion-value">4.1%</span>
+                            </div>
+                            <div class="conversion-item">
+                                <span class="conversion-label">Services</span>
+                                <span class="conversion-value">2.8%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Product Management</h2>
+                    <button class="btn btn-primary" id="addProductBtn">Add Product</button>
+                </div>
+                
+                <div class="products-table glass-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Sales</th>
+                                <th>Revenue</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-icon">{}</div>
+                                        <div>
+                                            <div class="product-name">Code Optimizer Pro</div>
+                                            <div class="product-category">Development Tool</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$49.99</td>
+                                <td>234</td>
+                                <td>$11,697</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="btn-icon" title="Edit">✏️</button>
+                                    <button class="btn-icon" title="Delete">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-icon">UX</div>
+                                        <div>
+                                            <div class="product-name">UI Kit Cyber</div>
+                                            <div class="product-category">Design Kit</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$79.99</td>
+                                <td>156</td>
+                                <td>$12,478</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="btn-icon" title="Edit">✏️</button>
+                                    <button class="btn-icon" title="Delete">🗑️</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Users Section -->
+            <section id="users" class="dashboard-section">
+                <div class="section-header">
+                    <h2>User Management</h2>
+                    <button class="btn btn-primary">Add User</button>
+                </div>
+                
+                <div class="users-grid">
+                    <div class="user-card glass-card">
+                        <div class="user-header">
+                            <div class="user-avatar">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300bfff'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='40' font-family='Arial'%3EJD%3C/text%3E%3C/svg%3E" alt="User">
+                            </div>
+                            <div class="user-details">
+                                <h4>John Doe</h4>
+                                <p>john.doe@email.com</p>
+                            </div>
+                        </div>
+                        <div class="user-stats">
+                            <div class="user-stat">
+                                <span class="stat-label">Purchases</span>
+                                <span class="stat-value">12</span>
+                            </div>
+                            <div class="user-stat">
+                                <span class="stat-label">Total Spent</span>
+                                <span class="stat-value">$589</span>
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <button class="btn btn-small">View Details</button>
+                            <button class="btn btn-small btn-secondary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sales Section -->
+            <section id="sales" class="dashboard-section">
+                <div class="sales-summary glass-card">
+                    <h3>Sales Summary</h3>
+                    <div class="sales-stats">
+                        <div class="sales-stat">
+                            <span class="stat-label">Today's Sales</span>
+                            <span class="stat-value">$1,234</span>
+                        </div>
+                        <div class="sales-stat">
+                            <span class="stat-label">This Week</span>
+                            <span class="stat-value">$8,567</span>
+                        </div>
+                        <div class="sales-stat">
+                            <span class="stat-label">This Month</span>
+                            <span class="stat-value">$32,890</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sales-table glass-card">
+                    <h3>Recent Sales</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>John Doe</td>
+                                <td>Code Optimizer Pro</td>
+                                <td>$49.99</td>
+                                <td>2026-01-13</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <div class="settings-grid">
+                    <div class="settings-card glass-card">
+                        <h3>General Settings</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Site Name</label>
+                                <input type="text" value="H4K HEX">
+                            </div>
+                            <div class="form-group">
+                                <label>Admin Email</label>
+                                <input type="email" value="admin@h4khex.com">
+                            </div>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card glass-card">
+                        <h3>Security Settings</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Two-Factor Authentication</label>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Login Notifications</label>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <button class="btn btn-primary">Update Security</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+    // Check if user is logged in
+    if (!sessionStorage.getItem('isLoggedIn')) {
+        window.location.href = 'login.html';
+    }
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
